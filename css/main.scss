@@ -1,5 +1,253 @@
+$primary: #0065fc;
+$secondary: #deebff;
+$grey: #f2f2f2;
+
 * {
   list-style: none;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    height: 170px;
+    width: 100%;
+  }
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+}
+
+header {
+  background: white;
+  padding: 30px 0 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  .nav__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 100px;
+    }
+    ul li a {
+      font-weight: 700;
+      color: $primary;
+    }
+  }
+  .nav__sections {
+    display: flex;
+    margin-top: 10px;
+    div {
+      width: 50%;
+      text-align: center;
+      border-bottom: 3px solid $grey;
+      padding: 10px 0;
+    }
+    .active {
+      border-bottom-color: $primary;
+      a {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.hero {
+  padding: 0 0 30px 0;
+  h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .search {
+    display: flex;
+    border: 1px solid $grey;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    height: 50px;
+    margin: 30px auto;
+    overflow: hidden;
+    &__location-input {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .icon-location {
+      background: $grey;
+      width: 50px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      border: none;
+      padding-left: 20px;
+      font-size: 18px;
+      font-weight: 700;
+      &::placeholder {
+        color: black;
+        font-family: "Raleway", sans-serif;
+      }
+      &:focus {
+        outline: none;
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    .icon-search {
+      background: $primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 50px;
+      border-radius: 12px 0 0 12px;
+      i {
+        color: white;
+      }
+    }
+  }
+  .section-filters {
+    .filters {
+      margin: 15px 0 30px;
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+      .filter {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-radius: 50px;
+        border: 2px solid $grey;
+        padding: 15px 15px 15px 0;
+        margin: 0 8px 10px 0;
+        font-weight: 700;
+        &__icon {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $primary;
+          background: $secondary;
+        }
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  .info {
+    display: flex;
+    align-items: start;
+    .icon-info {
+      display: flex;
+      flex-shrink: 0;
+      border: 1px solid $grey;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: $primary;
+    }
+    p {
+      padding: 5px 0px 0 10px;
+    }
+  }
+}
+
+section {
+  padding: 30px 0 0 0;
+}
+
+.section--hebergements {
+  background: $grey;
+  .popular {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      i {
+        font-size: 24px;
+      }
+    }
+    .card--popular {
+      display: flex;
+      padding: 5px;
+      height: 140px;
+      .card__img {
+        height: 100%;
+        width: 130px;
+        border-radius: 15px 0 0 15px;
+      }
+      #popularImg1 {
+        background: url("../images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg") no-repeat center;
+        background-size: cover;
+      }
+      #popularImg2 {
+        background: url("../images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg") no-repeat center;
+        background-size: cover;
+      }
+      #popularImg3 {
+        background: url("../images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg") no-repeat center;
+        background-size: cover;
+      }
+      .card__content {
+        padding: 10px 0 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .card__title {
+          margin-bottom: 5px;
+        }
+        .card__subtitle {
+          font-size: 14px;
+        }
+        .card__stars {
+          font-size: 12px;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+img {
+  width: 200px;
 }
