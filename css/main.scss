@@ -9,22 +9,29 @@ $grey: #f2f2f2;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
   position: relative;
-  &::before {
-    content: "";
-    display: block;
-    height: 170px;
-    width: 100%;
-  }
+  // &::before {
+  //   content: "";
+  //   display: block;
+  //   height: 170px;
+  //   width: 100%;
+  // }
 }
 
 h2 {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 .container {
@@ -43,6 +50,15 @@ a {
   border-radius: 18px;
   margin-bottom: 10px;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  position: relative;
+  a {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
   &__content {
     display: flex;
     flex-direction: column;
@@ -92,9 +108,14 @@ header {
     .logo {
       width: 100px;
     }
-    ul li a {
-      font-weight: 700;
-      color: $primary;
+    ul {
+      .subscription a {
+        font-weight: 700;
+        color: $primary;
+      }
+      .hidden-mobile {
+        display: none;
+      }
     }
   }
   .nav__sections {
@@ -116,7 +137,7 @@ header {
 }
 
 .hero {
-  padding: 0 0 30px 0;
+  padding: 162px 0 30px 0;
   h1 {
     font-size: 22px;
     margin-bottom: 10px;
@@ -128,8 +149,11 @@ header {
     align-items: center;
     border-radius: 12px;
     height: 50px;
-    margin: 30px auto;
+    margin: 30px 0;
     overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+
     &__location-input {
       height: 100%;
       display: flex;
@@ -172,8 +196,15 @@ header {
         color: white;
       }
     }
+    .text-search {
+      display: none;
+    }
   }
   .section-filters {
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+    }
     .filters {
       margin: 15px 0 20px;
       display: flex;
@@ -231,6 +262,7 @@ section {
 }
 
 .section--hebergements {
+  scroll-margin-top: 110px;
   padding-top: 0;
   .popular--card {
     background: $grey;
@@ -260,14 +292,16 @@ section {
       }
       #popularImg1 {
         background: url("../images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg") no-repeat center;
-        background-size: cover;
       }
       #popularImg2 {
         background: url("../images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg") no-repeat center;
-        background-size: cover;
       }
       #popularImg3 {
         background: url("../images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg") no-repeat center;
+      }
+      #popularImg1,
+      #popularImg2,
+      #popularImg3 {
         background-size: cover;
       }
       .card__content {
@@ -293,8 +327,34 @@ section {
     padding-top: 30px;
     .card {
       padding: 5px;
-      // margin-bottom: 10px;
+      margin-bottom: 10px;
 
+      #hebergementImage1 {
+        background: url("../images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage2 {
+        background: url("../images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage3 {
+        background: url("../images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage4 {
+        background: url("../images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage5 {
+        background: url("../images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage6 {
+        background: url("../images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg") no-repeat center;
+      }
+      #hebergementImage1,
+      #hebergementImage2,
+      #hebergementImage3,
+      #hebergementImage4,
+      #hebergementImage5,
+      #hebergementImage6 {
+        background-size: cover;
+      }
       &__content {
         padding: 10px 10px 5px;
         .card__subtitle {
@@ -306,17 +366,54 @@ section {
 }
 
 .section--activites {
+  scroll-margin-top: 120px;
   h2 {
     margin-bottom: 25px;
   }
   .card {
     margin-bottom: 25px;
+    #activiteImage1 {
+      background: url("../images/activites/2_large/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg") no-repeat;
+    }
+
+    #activiteImage2 {
+      background: url("../images/activites/2_large/paul-hermann-QFTrLdQIRhI-unsplash.jpg") no-repeat;
+      background-position: center top 40%;
+    }
+
+    #activiteImage3 {
+      background: url("../images/activites/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg") no-repeat;
+    }
+
+    #activiteImage4 {
+      background: url("../images/activites/2_large/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg") no-repeat;
+    }
+
+    #activiteImage5 {
+      background: url("../images/activites/2_large/florian-wehde-xW9e8gdotxI-unsplash.jpg") no-repeat;
+    }
+
+    #activiteImage6 {
+      background: url("../images/activites/2_large/lena-paulin-wH2-EJoDcV0-unsplash.jpg") no-repeat;
+    }
+    #activiteImage1,
+    #activiteImage2,
+    #activiteImage3,
+    #activiteImage4,
+    #activiteImage5,
+    #activiteImage6 {
+      background-size: cover;
+    }
+    #activiteImage1,
+    #activiteImage3,
+    #activiteImage4,
+    #activiteImage5,
+    #activiteImage6 {
+      background-position: center top 20%;
+    }
   }
   .card__img--full {
-    height: 130px;
-    img {
-      top: -20px;
-    }
+    height: 135px;
   }
   .card__title {
     padding: 25px 15px 15px;
@@ -326,13 +423,76 @@ section {
 footer {
   background-color: $grey;
   padding: 50px 0 10px;
-  h3 {
+  h2 {
+    font-size: 18px;
     margin-bottom: 20px;
   }
   ul {
     margin-bottom: 40px;
     li {
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    .nav__header ul {
+      display: flex;
+      li {
+        padding: 0 30px;
+      }
+      .hidden-mobile {
+        display: block;
+      }
+      .subscription {
+        padding-right: 0;
+      }
+      .item-active {
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $primary;
+          top: -46px;
+          left: 0;
+        }
+        a {
+          color: $primary;
+        }
+      }
+    }
+    .nav__sections {
+      display: none;
+    }
+  }
+  .hero {
+    padding-top: 110px;
+    .search {
+      margin: 20px 0;
+      .icon-search {
+        display: none;
+      }
+      .text-search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        color: white;
+        background-color: $primary;
+        height: 100%;
+      }
+    }
+  }
+
+  .section--hebergements {
+    scroll-margin-top: 80px;
+  }
+
+  .section--activites {
+    scroll-margin-top: 90px;
   }
 }

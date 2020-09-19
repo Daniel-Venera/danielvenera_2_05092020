@@ -6,23 +6,24 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
   position: relative;
 }
 
-body::before {
-  content: "";
-  display: block;
-  height: 170px;
-  width: 100%;
-}
-
 h2 {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 .container {
@@ -42,6 +43,16 @@ a {
   margin-bottom: 10px;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
           box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.14);
+  position: relative;
+}
+
+.card a {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
 }
 
 .card__content {
@@ -116,9 +127,13 @@ header .nav__header .logo {
   width: 100px;
 }
 
-header .nav__header ul li a {
+header .nav__header ul .subscription a {
   font-weight: 700;
   color: #0065fc;
+}
+
+header .nav__header ul .hidden-mobile {
+  display: none;
 }
 
 header .nav__sections {
@@ -144,7 +159,7 @@ header .nav__sections .active a {
 }
 
 .hero {
-  padding: 0 0 30px 0;
+  padding: 162px 0 30px 0;
 }
 
 .hero h1 {
@@ -165,8 +180,10 @@ header .nav__sections .active a {
           align-items: center;
   border-radius: 12px;
   height: 50px;
-  margin: 30px auto;
+  margin: 30px 0;
   overflow: hidden;
+  width: 100%;
+  max-width: 400px;
 }
 
 .hero .search__location-input {
@@ -261,6 +278,15 @@ header .nav__sections .active a {
   color: white;
 }
 
+.hero .search .text-search {
+  display: none;
+}
+
+.hero .section-filters h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
 .hero .section-filters .filters {
   margin: 15px 0 20px;
   display: -webkit-box;
@@ -346,6 +372,7 @@ section {
 }
 
 .section--hebergements {
+  scroll-margin-top: 110px;
   padding-top: 0;
 }
 
@@ -394,16 +421,19 @@ section {
 
 .section--hebergements .popular .card--popular #popularImg1 {
   background: url("../images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg") no-repeat center;
-  background-size: cover;
 }
 
 .section--hebergements .popular .card--popular #popularImg2 {
   background: url("../images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg") no-repeat center;
-  background-size: cover;
 }
 
 .section--hebergements .popular .card--popular #popularImg3 {
   background: url("../images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .popular .card--popular #popularImg1,
+.section--hebergements .popular .card--popular #popularImg2,
+.section--hebergements .popular .card--popular #popularImg3 {
   background-size: cover;
 }
 
@@ -441,6 +471,40 @@ section {
 
 .section--hebergements .marseille .card {
   padding: 5px;
+  margin-bottom: 10px;
+}
+
+.section--hebergements .marseille .card #hebergementImage1 {
+  background: url("../images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage2 {
+  background: url("../images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage3 {
+  background: url("../images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage4 {
+  background: url("../images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage5 {
+  background: url("../images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage6 {
+  background: url("../images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg") no-repeat center;
+}
+
+.section--hebergements .marseille .card #hebergementImage1,
+.section--hebergements .marseille .card #hebergementImage2,
+.section--hebergements .marseille .card #hebergementImage3,
+.section--hebergements .marseille .card #hebergementImage4,
+.section--hebergements .marseille .card #hebergementImage5,
+.section--hebergements .marseille .card #hebergementImage6 {
+  background-size: cover;
 }
 
 .section--hebergements .marseille .card__content {
@@ -451,6 +515,10 @@ section {
   margin-bottom: 5px;
 }
 
+.section--activites {
+  scroll-margin-top: 120px;
+}
+
 .section--activites h2 {
   margin-bottom: 25px;
 }
@@ -459,12 +527,50 @@ section {
   margin-bottom: 25px;
 }
 
-.section--activites .card__img--full {
-  height: 130px;
+.section--activites .card #activiteImage1 {
+  background: url("../images/activites/2_large/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg") no-repeat;
 }
 
-.section--activites .card__img--full img {
-  top: -20px;
+.section--activites .card #activiteImage2 {
+  background: url("../images/activites/2_large/paul-hermann-QFTrLdQIRhI-unsplash.jpg") no-repeat;
+  background-position: center top 40%;
+}
+
+.section--activites .card #activiteImage3 {
+  background: url("../images/activites/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg") no-repeat;
+}
+
+.section--activites .card #activiteImage4 {
+  background: url("../images/activites/2_large/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg") no-repeat;
+}
+
+.section--activites .card #activiteImage5 {
+  background: url("../images/activites/2_large/florian-wehde-xW9e8gdotxI-unsplash.jpg") no-repeat;
+}
+
+.section--activites .card #activiteImage6 {
+  background: url("../images/activites/2_large/lena-paulin-wH2-EJoDcV0-unsplash.jpg") no-repeat;
+}
+
+.section--activites .card #activiteImage1,
+.section--activites .card #activiteImage2,
+.section--activites .card #activiteImage3,
+.section--activites .card #activiteImage4,
+.section--activites .card #activiteImage5,
+.section--activites .card #activiteImage6 {
+  background-size: cover;
+}
+
+.section--activites .card #activiteImage1,
+.section--activites .card #activiteImage3,
+.section--activites .card #activiteImage4,
+.section--activites .card #activiteImage5,
+.section--activites .card #activiteImage6 {
+  background-position: center top 20%;
+}
+
+.section--activites .card__img--full {
+  height: 135px;
 }
 
 .section--activites .card__title {
@@ -476,7 +582,8 @@ footer {
   padding: 50px 0 10px;
 }
 
-footer h3 {
+footer h2 {
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -485,6 +592,72 @@ footer ul {
 }
 
 footer ul li {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+}
+
+@media (min-width: 768px) {
+  header .nav__header ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .nav__header ul li {
+    padding: 0 30px;
+  }
+  header .nav__header ul .hidden-mobile {
+    display: block;
+  }
+  header .nav__header ul .subscription {
+    padding-right: 0;
+  }
+  header .nav__header ul .item-active {
+    position: relative;
+  }
+  header .nav__header ul .item-active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #0065fc;
+    top: -46px;
+    left: 0;
+  }
+  header .nav__header ul .item-active a {
+    color: #0065fc;
+  }
+  header .nav__sections {
+    display: none;
+  }
+  .hero {
+    padding-top: 110px;
+  }
+  .hero .search {
+    margin: 20px 0;
+  }
+  .hero .search .icon-search {
+    display: none;
+  }
+  .hero .search .text-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 120px;
+    color: white;
+    background-color: #0065fc;
+    height: 100%;
+  }
+  .section--hebergements {
+    scroll-margin-top: 80px;
+  }
+  .section--activites {
+    scroll-margin-top: 90px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
