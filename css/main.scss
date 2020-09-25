@@ -520,7 +520,7 @@ footer {
   }
   .marseille__cards-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
   }
   .marseille__cards-row:first-child {
@@ -538,7 +538,8 @@ footer {
       margin: 0 auto 45px;
       display: flex;
       justify-content: space-between;
-      max-width: 650px;
+      min-width: 650px;
+      width: 50%;
       height: 450px;
       .card-full {
         width: 50%;
@@ -634,6 +635,16 @@ footer {
       }
       .card {
         width: 350px;
+      }
+    }
+  }
+  .section--activites {
+    .activites-cards-row {
+      .activites__cards {
+        &:first-child {
+          padding-right: 40px;
+        }
+        min-width: 0;
       }
     }
   }

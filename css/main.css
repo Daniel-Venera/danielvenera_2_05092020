@@ -694,9 +694,8 @@ footer ul li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 100%;
   }
   .marseille__cards-row:first-child {
@@ -716,7 +715,8 @@ footer ul li {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    max-width: 650px;
+    min-width: 650px;
+    width: 50%;
     height: 450px;
   }
   .section--activites .activites__cards .card-full {
@@ -828,6 +828,12 @@ footer ul li {
   }
   .section--hebergements .popular--card .card {
     width: 350px;
+  }
+  .section--activites .activites-cards-row .activites__cards {
+    min-width: 0;
+  }
+  .section--activites .activites-cards-row .activites__cards:first-child {
+    padding-right: 40px;
   }
 }
 /*# sourceMappingURL=main.css.map */
