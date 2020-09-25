@@ -576,8 +576,10 @@ footer {
   footer {
     .footer-items-container {
       display: flex;
-      justify-content: space-between;
       max-width: 1030px;
+      .footer-items {
+        padding-right: 60px;
+      }
     }
   }
 }
@@ -593,6 +595,14 @@ footer {
         .filter {
           margin-bottom: 0;
         }
+      }
+    }
+  }
+  footer {
+    .footer-items-container {
+      justify-content: space-between;
+      .footer-items {
+        // padding: 0;
       }
     }
   }
@@ -645,6 +655,13 @@ footer {
           padding-right: 40px;
         }
         min-width: 0;
+      }
+    }
+  }
+  footer {
+    .footer-items-container {
+      .footer-items {
+        padding: 0;
       }
     }
   }

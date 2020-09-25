@@ -759,10 +759,10 @@ footer ul li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     max-width: 1030px;
+  }
+  footer .footer-items-container .footer-items {
+    padding-right: 60px;
   }
 }
 
@@ -781,6 +781,11 @@ footer ul li {
   }
   .hero .section-filters .filters .filter {
     margin-bottom: 0;
+  }
+  footer .footer-items-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -834,6 +839,9 @@ footer ul li {
   }
   .section--activites .activites-cards-row .activites__cards:first-child {
     padding-right: 40px;
+  }
+  footer .footer-items-container .footer-items {
+    padding: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
