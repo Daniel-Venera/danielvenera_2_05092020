@@ -16,12 +16,6 @@ body {
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
   position: relative;
-  // &::before {
-  //   content: "";
-  //   display: block;
-  //   height: 170px;
-  //   width: 100%;
-  // }
 }
 
 h2 {
@@ -35,7 +29,6 @@ h3 {
 }
 
 .container {
-  max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -217,7 +210,7 @@ header {
         border-radius: 50px;
         border: 2px solid $grey;
         padding: 15px 15px 15px 0;
-        margin: 0 8px 10px 0;
+        margin: 0 18px 10px 0;
         font-weight: 700;
         &__icon {
           height: 50px;
@@ -264,8 +257,14 @@ section {
 .section--hebergements {
   scroll-margin-top: 110px;
   padding-top: 0;
+
   .popular--card {
     background: $grey;
+    .popular__cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   .popular {
     padding: 40px 0 20px;
@@ -285,6 +284,9 @@ section {
       display: flex;
       padding: 5px;
       height: 140px;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 340px;
       .card__img {
         height: 100%;
         width: 130px;
@@ -436,6 +438,10 @@ footer {
 }
 
 @media (min-width: 480px) {
+  .section--hebergements .popular .card--popular {
+    max-width: 350px;
+    margin: 10px;
+  }
   .marseille__cards {
     display: flex;
     flex-wrap: wrap;
@@ -444,20 +450,6 @@ footer {
       width: 245px;
       margin-left: 5px;
       margin-right: 5px;
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .section--hebergements {
-    .popular__cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      .card--popular {
-        width: 500px;
-        margin: 10px;
-      }
     }
   }
 }
@@ -471,9 +463,6 @@ footer {
       }
       .hidden-mobile {
         display: block;
-      }
-      .subscription {
-        padding-right: 0;
       }
       .item-active {
         position: relative;
@@ -515,9 +504,6 @@ footer {
     }
   }
 
-  .section--hebergements {
-    scroll-margin-top: 80px;
-  }
   .marseille__cards-row {
     display: flex;
     justify-content: space-around;
@@ -584,7 +570,10 @@ footer {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
   .hero {
     .section-filters {
       display: flex;
@@ -598,28 +587,7 @@ footer {
       }
     }
   }
-  footer {
-    .footer-items-container {
-      justify-content: space-between;
-      .footer-items {
-        // padding: 0;
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    padding: 0 40px;
-  }
-  .activites-cards-row {
-    display: flex;
-  }
-  .container {
-    max-width: 1280px;
-  }
   .section--hebergements {
-    max-width: 1280px;
     padding: 0px 40px;
     margin: 0 auto;
     display: flex;
@@ -627,26 +595,33 @@ footer {
       padding: 0;
     }
     .marseille {
-      width: 880px;
+      min-width: 65%;
       padding: 35px;
       background-color: $grey;
       border-radius: 20px;
       .card {
-        margin: 0;
+        margin: 0 0 10px;
       }
     }
-
-    .popular--card {
-      padding: 40px;
+    .popular-card-container {
+      padding-left: 10px;
       order: 2;
-      border-radius: 20px;
-      .popular {
-        padding: 0;
-      }
-      .card {
-        width: 350px;
+      .popular--card {
+        padding: 40px;
+        border-radius: 20px;
+        .popular {
+          padding: 0;
+          .popular__cards {
+            .card {
+              margin: 10px 0;
+            }
+          }
+        }
       }
     }
+  }
+  .activites-cards-row {
+    display: flex;
   }
   .section--activites {
     .activites-cards-row {
@@ -660,6 +635,8 @@ footer {
   }
   footer {
     .footer-items-container {
+      justify-content: space-between;
+
       .footer-items {
         padding: 0;
       }
@@ -668,4 +645,16 @@ footer {
 }
 
 @media (min-width: 1440px) {
+  .container {
+    padding: 0px 45px;
+  }
+  .section--hebergements {
+    padding: 0px 45px;
+    .marseille__cards {
+      justify-content: space-between;
+    }
+    .popular-card-container {
+      padding-left: 40px;
+    }
+  }
 }
