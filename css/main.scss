@@ -251,6 +251,7 @@ section {
     padding-top: 0;
     .popular--card {
         background: $grey;
+        height: 100%;
         .popular__cards {
             display: flex;
             flex-wrap: wrap;
