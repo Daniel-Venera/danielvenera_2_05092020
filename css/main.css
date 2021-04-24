@@ -823,8 +823,15 @@ footer ul li:hover {
     background-color: #f2f2f2;
     border-radius: 20px;
   }
-  .section--hebergements .marseille .card {
-    margin: 0 0 10px;
+  .section--hebergements .marseille__cards {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 30px;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .section--hebergements .marseille__cards .card {
+    width: 100%;
   }
   .section--hebergements .popular-card-container {
     padding-left: 10px;
@@ -869,11 +876,6 @@ footer ul li:hover {
   }
   .section--hebergements {
     padding: 0px 45px;
-  }
-  .section--hebergements .marseille__cards {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .section--hebergements .popular-card-container {
     padding-left: 40px;
